@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: white;
+  transition: all 0.5s ease;
+}
+
+body:has(input[name='changeMode']:checked) {
+  background-color: #0c0d1d;
+  color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.main {
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.changeMode {
+  width: 80px;
+  height: 40px;
+  display: block;
+  background-color: #ccc;
+  border-radius: 30px;
+  position: relative;
+  transition: all 0.5s;
+}
+.changeMode::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 30px;
+  height: 30px;
+  transition: 0.5s;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  background-image: url(../image/sun.png);
+  background-size: 70%;
+  background-color: white;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.changeMode input {
+  display: none;
+}
+
+.changeMode:has(input:checked) {
+  background-color: green;
+}
+.changeMode:has(input:checked)::before {
+  left: 45px;
+  background-image: url(../image/moon.png);
+  background-color: white;
+}
